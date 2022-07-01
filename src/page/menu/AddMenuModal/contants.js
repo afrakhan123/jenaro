@@ -6,4 +6,5 @@ export const INITIAL_FORM_DATA = {
   cost: 0,
   stock: 0,
   image: "",
+  errors: {},
 };

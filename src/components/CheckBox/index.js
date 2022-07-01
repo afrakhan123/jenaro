@@ -5,7 +5,7 @@ const CheckBox = (props) => {
     <input
       {...props}
       type="checkbox"
-      className="rounded focus:outline-2 focus:outline-blue-500 cursor-pointer"
+      className="rounded focus:outline-2 focus:outline-secondary-500 cursor-pointer color-secondary-500"
     />
   );
 };

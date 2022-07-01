@@ -71,9 +71,9 @@ const Modal = (props) => {
                           onClick={onOk}
                           className={`${
                             okButtonProps.disabled
-                              ? "cursor-not-allowed bg-blue-400"
+                              ? "cursor-not-allowed bg-secondary-400"
                               : ""
-                          } w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm`}
+                          } w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-secondary-700 text-base font-medium text-white hover:bg-secondary-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-secondary-500 sm:ml-3 sm:w-auto sm:text-sm`}
                         >
                           {okText}
                         </button>

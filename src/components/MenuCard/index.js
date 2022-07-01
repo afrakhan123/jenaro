@@ -9,7 +9,7 @@ const MenuCard = ({ onClick, data }) => {
       }}
     >
       <img
-        className="object-cover rounded-md w-52 h-40 opacity-50 group-hover:scale-110 transition-all group-hover:shadow-lg"
+        className="object-cover rounded-md w-52 h-40 opacity-50 group-hover:scale-110 transition-all group-hover:shadow-lg bg-white"
         src={data.imageUrl !== "" ? data.imageUrl : DishIcon}
       />
       <div className="absolute top-0 text-center w-full h-full flex flex-row items-center">

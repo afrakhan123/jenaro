@@ -10,18 +10,24 @@ const AddCategoryModal = ({ isOpen, setOpen }) => {
   const [imageUrl, setImageUrl] = useState("");
   const [isUploading, setIsUploading] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
+  const [error, setError] = useState("");
   const handleSubmit = async () => {
-    try {
-      setIsSaving(true);
-      await addDoc(collection(db, "category"), {
-        name: category,
-        imageUrl,
-        created: Timestamp.now(),
-      });
-      setIsSaving(false);
-      setOpen(false);
-    } catch (err) {
-      alert(err);
+    if (category !== "") {
+      setError("");
+      try {
+        setIsSaving(true);
+        await addDoc(collection(db, "category"), {
+          name: category,
+          imageUrl,
+          created: Timestamp.now(),
+        });
+        setIsSaving(false);
+        setOpen(false);
+      } catch (err) {
+        alert(err);
+      }
+    } else {
+      setError("Category is required.");
     }
   };
   const handleClose = () => {
@@ -57,7 +63,9 @@ const AddCategoryModal = ({ isOpen, setOpen }) => {
         </label>
         <Input
           value={category}
+          error={error}
           onChange={(e) => {
+            setError("");
             setCategory(e.target.value);
           }}
         />

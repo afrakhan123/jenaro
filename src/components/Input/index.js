@@ -1,9 +1,15 @@
 import React from "react";
 
 const Input = (props) => {
+  const { error = "" } = props;
+  const hasError =
+    error !== ""
+      ? "focus:text-red-700 focus:bg-white focus:outline-2 focus:outline-red-500 border-red-500"
+      : "";
   return (
-    <input
-      className="
+    <React.Fragment>
+      <input
+        className={`
         form-control
         block
         w-full
@@ -18,12 +24,18 @@ const Input = (props) => {
         transition
         ease-in-out
         m-0
-        focus:text-gray-700 focus:bg-white focus:outline-2 focus:outline-blue-500
-      "
-     {
-        ...props
-     }
-    />
+      
+        focus:text-gray-700 focus:bg-white focus:outline-2 focus:outline-secondary-500
+        ${hasError}
+      `}
+        {...props}
+      />
+      {error !== "" && (
+        <label className="text-red-700 w-full mx-2 text-sm">
+          &#8226; {error}
+        </label>
+      )}
+    </React.Fragment>
   );
 };
 

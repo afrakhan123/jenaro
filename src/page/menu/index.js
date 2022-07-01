@@ -43,7 +43,7 @@ const Menu = () => {
           Add Menu
         </Button> */}
       </div>
-      <div className="mx-3 text-3xl font-bold font-display my-5">Add menu by category</div>
+      <div className="mx-3 text-3xl font-bold font-display my-5 text-center md:text-start">Add menu by category</div>
       <div className="flex flex-wrap flex-col items-center md:items-start md:flex-row">
         <Category
           selectedCategory={(e) => {
@@ -51,6 +51,7 @@ const Menu = () => {
           }}
         />
       </div>
+      
     </div>
   );
 };
