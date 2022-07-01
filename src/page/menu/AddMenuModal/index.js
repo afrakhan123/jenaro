@@ -17,8 +17,6 @@ const AddMenuModal = ({ isOpen, setOpen, selectedCategory }) => {
   const handleSubmit = async () => {
     const errors = validateForm(form, ["name", "price", "cost", "stock"]);
     const sizeError = form.hasSize && form.size === "";
-    console.log(sizeError);
-
     if (errors || sizeError) {
       let newErrors = {};
       if (sizeError) {
@@ -80,7 +78,6 @@ const AddMenuModal = ({ isOpen, setOpen, selectedCategory }) => {
       setOpen({});
     }
   };
-  console.log(form);
   return (
     <Modal
       isOpen={isOpen}
